@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Henrik Nyh"]
   spec.email         = ["henrik@nyh.se"]
 
-  spec.summary       = "Validate and normalize international bank account numbers like IBAN. Based on iban-tools."
+  spec.summary       = "Validate and normalize international bank account numbers like IBAN/BIC. Based on iban-tools."
   spec.homepage      = "https://github.com/barsoom/banktools-global"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")

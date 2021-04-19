@@ -1,6 +1,6 @@
 # Banktools::Global
 
-Validate and normalize international bank account numbers like IBAN. (At the time of writing, it's only IBAN, but we may add support for e.g. BIC/SWIFT later as needed.)
+Validate and normalize international bank account numbers like IBAN and BIC.
 
 Based on [iban-tools](https://github.com/iulianu/iban-tools) which became unmaintained.
 
@@ -22,7 +22,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### IBAN
+
+```ruby
+account = BankTools::Global::IBAN.new(" GB82 WEST 1234 5698 765432 ")
+account.valid?  # => true
+account.errors  # => []
+account.normalize  # => "GB82 WEST 1234 5698 7654 32"
+
+account = BankTools::Global::IBAN.new("GB82")
+account.valid?  # => false
+account.errors  # => [:too_short]
+```
+
+### BIC
+
+```ruby
+account = BankTools::Global::BIC.new("ESS ESESS")
+account.valid?  # => true
+account.errors  # => []
+account.normalize  # => "ESSESESS"
+
+account = BankTools::Global::BIC.new("XXSESESS")
+account.valid?  # => false
+account.errors  # => [:unknown_country]
+```
 
 ## Also see
 
