@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
+require_relative "errors"
+
 class BankTools::Global::BIC
+  E = BankTools::Global::Errors
+
   # http://sv.wikipedia.org/wiki/ISO_9362
   RE = /\A
     [A-Z]{4}
@@ -21,10 +25,10 @@ class BankTools::Global::BIC
 
   def errors
     match = @raw.to_s.match(RE)
-    return [ :bad_format ] unless match
+    return [ E::BAD_FORMAT ] unless match
 
     country_code = match.captures.first.upcase
-    return [ :unknown_country ] unless COUNTRY_CODES.include?(country_code)
+    return [ E::UNKNOWN_COUNTRY ] unless COUNTRY_CODES.include?(country_code)
 
     []
   end

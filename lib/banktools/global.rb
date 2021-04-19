@@ -6,4 +6,5 @@ module BankTools
 end
 
 require_relative "global/version"
+require_relative "global/iban"
 require_relative "global/bic"

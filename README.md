@@ -4,22 +4,6 @@ Validate and normalize international bank account numbers like IBAN and BIC.
 
 Based on [iban-tools](https://github.com/iulianu/iban-tools) which became unmaintained.
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem "banktools-global"
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install banktools-global
-
 ## Usage
 
 ### IBAN
@@ -32,11 +16,14 @@ account.normalize  # => "GB82 WEST 1234 5698 7654 32"
 
 account = BankTools::Global::IBAN.new("GB82")
 account.valid?  # => false
-account.errors  # => [:too_short]
+account.errors  # => [:wrong_length]
 
 # Error codes
 
-# TODO
+Banktools::Global::Errors::BAD_CHECKSUM     # => :bad_checksum
+Banktools::Global::Errors::BAD_FORMAT       # => :bad_format
+Banktools::Global::Errors::UNKNOWN_COUNTRY  # => :unknown_country
+Banktools::Global::Errors::WRONG_LENGTH     # => :wrong_length
 ```
 
 ### BIC
@@ -55,13 +42,28 @@ account.errors  # => [:unknown_country]
 
 Banktools::Global::Errors::BAD_FORMAT       # => :bad_format
 Banktools::Global::Errors::UNKNOWN_COUNTRY  # => :unknown_country
-
 ```
-
 
 ## Also see
 
 * [Our other banktools](https://github.com/barsoom?q=banktools)
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem "banktools-global"
+```
+
+And then execute:
+
+    $ bundle install
+
+Or install it yourself as:
+
+    $ gem install banktools-global
+
 
 ## Development
 
