@@ -28,4 +28,8 @@ class BankTools::Global::BIC
 
     []
   end
+
+  def normalize
+    @raw.to_s.upcase.gsub(/\s/, "")
+  end
 end
