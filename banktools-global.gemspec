@@ -4,21 +4,18 @@ require_relative "lib/banktools/global/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "banktools-global"
-  spec.version       = Banktools::Global::VERSION
+  spec.version       = BankTools::Global::VERSION
   spec.authors       = ["Henrik Nyh"]
   spec.email         = ["henrik@nyh.se"]
 
-  spec.summary       = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description   = "TODO: Write a longer description or delete this line."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Validate and normalize international bank account numbers like IBAN. Based on iban-tools."
+  spec.homepage      = "https://github.com/barsoom/banktools-global"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = spec.homepage
+  spec.metadata["changelog_uri"] = "https://github.com/barsoom/banktools-global/blob/master/README.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

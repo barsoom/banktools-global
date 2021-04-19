@@ -2,7 +2,7 @@
 
 require_relative "global/version"
 
-module Banktools
+module BankTools
   module Global
     class Error < StandardError; end
     # Your code goes here...

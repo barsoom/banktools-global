@@ -1,15 +1,15 @@
 # Banktools::Global
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/banktools/global`. To experiment with that code, run `bin/console` for an interactive prompt.
+Validate and normalize international bank account numbers like IBAN. (At the time of writing, it's only IBAN, but we may add support for e.g. BIC/SWIFT later as needed.)
 
-TODO: Delete this and the text above, and describe your gem
+Based on [iban-tools](https://github.com/iulianu/iban-tools) which became unmaintained.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'banktools-global'
+gem "banktools-global"
 ```
 
 And then execute:
@@ -24,6 +24,10 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
+## Also see
+
+* [Our other banktools](https://github.com/barsoom?q=banktools)
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -32,7 +36,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/banktools-global.
+Bug reports and pull requests are welcome on GitHub at https://github.com/barsoom/banktools-global.
 
 ## License
 

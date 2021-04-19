@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.describe Banktools::Global do
+RSpec.describe BankTools::Global do
   it "has a version number" do
-    expect(Banktools::Global::VERSION).not_to be nil
-  end
-
-  it "does something useful" do
-    expect(false).to eq(true)
+    expect(BankTools::Global::VERSION).not_to be nil
   end
 end
