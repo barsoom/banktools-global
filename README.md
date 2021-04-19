@@ -33,6 +33,10 @@ account.normalize  # => "GB82 WEST 1234 5698 7654 32"
 account = BankTools::Global::IBAN.new("GB82")
 account.valid?  # => false
 account.errors  # => [:too_short]
+
+# Error codes
+
+# TODO
 ```
 
 ### BIC
@@ -43,10 +47,17 @@ account.valid?  # => true
 account.errors  # => []
 account.normalize  # => "ESSESESS"
 
-account = BankTools::Global::BIC.new("XXSESESS")
+account = BankTools::Global::BIC.new("ESSEXXSS")
 account.valid?  # => false
 account.errors  # => [:unknown_country]
+
+#  Error codes
+
+Banktools::Global::Errors::BAD_FORMAT       # => :bad_format
+Banktools::Global::Errors::UNKNOWN_COUNTRY  # => :unknown_country
+
 ```
+
 
 ## Also see
 
