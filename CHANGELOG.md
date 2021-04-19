@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [1.0.1] - 2021-04-19
+
+- Bugfix: Allow spaces in IBAN.
+
 ## [1.0.0] - 2021-04-19
 
 - Initial release.

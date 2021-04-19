@@ -3,9 +3,11 @@
 RSpec.describe BankTools::Global::IBAN do
   describe "#valid? and #errors" do
     it "is valid with valid IBANs" do
-      %w[
-        GB82WEST12345698765432
+      [
+        "GB82WEST12345698765432",
+        "GB82 WEST 12345698765432",
       ].each do |code|
+        expect(described_class.new(code).errors).to eq []
         expect(described_class.new(code).valid?).to be true
       end
     end

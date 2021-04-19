@@ -7,8 +7,7 @@ class BankTools::Global::IBAN
   E = BankTools::Global::Errors
 
   def initialize(raw)
-    @raw = raw
-    @pre_normalized = raw.to_s.strip.upcase
+    @pre_normalized = raw.to_s.gsub(/\s/, "").strip.upcase
   end
 
   def valid?
