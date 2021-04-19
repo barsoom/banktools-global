@@ -36,16 +36,16 @@ class BankTools::Global::IBAN
   private
 
   def good_checksum?
-    number_string =
+    number =
       (bban + country_code + check_digits).chars.map { |char|
         case char
         when "0".."9" then char
         when "A".."Z" then (char.ord - 55).to_s
         else raise "Unexpected byte '#{byte}' in IBAN '#{normalize}'!"
         end
-      }.join
+      }.join.to_i
 
-    number_string.to_i % 97 == 1
+    number % 97 == 1
   end
 
   def country_code
