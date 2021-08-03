@@ -30,7 +30,7 @@ class BankTools::Global::IBAN
   end
 
   def normalize
-     @pre_normalized.gsub(/.{4}/, '\0 ').strip
+    @pre_normalized.gsub(/.{4}/, '\0 ').strip
   end
 
   private

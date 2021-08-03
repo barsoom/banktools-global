@@ -14,14 +14,14 @@ RSpec.describe BankTools::Global::BIC do
     end
 
     it "is invalid with BICs having the wrong format" do
-     %w[
-       ESS%SS
-       ES
-     ].each do |code|
-        bic = described_class.new(code)
-        expect(bic.valid?).to be false
-        expect(bic.errors).to eq [ :bad_format ]
-      end
+      %w[
+        ESS%SS
+        ES
+      ].each do |code|
+         bic = described_class.new(code)
+         expect(bic.valid?).to be false
+         expect(bic.errors).to eq [ :bad_format ]
+       end
     end
 
     # Regression.
