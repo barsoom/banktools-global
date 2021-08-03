@@ -62,7 +62,7 @@ class BankTools::Global::IBAN
 
   def rules
     @@rules ||=
-      YAML.load(File.read(File.join(File.dirname(__FILE__), "iban_rules.yml")))
+      YAML.safe_load(File.read(File.join(File.dirname(__FILE__), "iban_rules.yml")))
         .transform_values { |h| h.merge("bban_pattern" => /\A#{h.fetch("bban_pattern")}\z/) }
   end
 end
