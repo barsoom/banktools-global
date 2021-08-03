@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Safer YAML loading
+
 ## [1.0.1] - 2021-04-19
 
 - Bugfix: Allow spaces in IBAN.
